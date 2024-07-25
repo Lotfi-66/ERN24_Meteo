@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #0042a5;
+    color: #fff !important;
+}
+
+#app{
+    background-image: url('./background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
