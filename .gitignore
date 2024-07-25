@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# ON IGNORE LE FICHIER CONFIG.JS SRC/CONFIG.JS
+src/config.js
