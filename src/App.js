@@ -110,7 +110,7 @@ class App {
         elButton.textContent = "Afficher la météo";
         elButton.addEventListener("click", this.getWeather.bind(this));
 
-        //on crée une div pour afficher me résultat
+        //on crée une div pour afficher le résultat
         this.elResultDiv = document.createElement("div");
         this.elResultDiv.className = "mt-3";
         this.elResultDiv.id = "result";
@@ -166,7 +166,7 @@ class App {
         }
         console.log(newWeather);
         //TODO : passer la requete
-        
+
     }
 }
 
