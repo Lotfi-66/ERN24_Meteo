@@ -179,11 +179,23 @@ class App {
     handleServiceResponse(serviceResponse) {
         console.log('response', serviceResponse);
         if (!serviceResponse.ok) {
+            this.elResultDiv.innerHTML = '';
+            this.elResultDiv.append(this.getErrorDom(serviceResponse.error));
+            return;
             //TODO: gerer l'erreur
         }
         const currentWeather = new MainWeather(serviceResponse.data);
         this.elResultDiv.innerHTML = '';
         this.elResultDiv.append(currentWeather.getDom());
+    }
+
+    //méthode pour gerer les erreurs
+    getErrorDom(error){
+        const elDivError = document.createElement('div');
+        elDivError.innerHTML = '';
+        elDivError.className = 'alert alert-danger';
+        elDivError.innerHTML = error;
+        return elDivError;
     }
 }
 

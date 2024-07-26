@@ -36,7 +36,8 @@ class MainWeather {
         // Création de l'instance Sun avec les données de lever et coucher de soleil
         this.sun = new Sun({
             sunset: mainWeatherLiteral.sys.sunset,
-            sunrise: mainWeatherLiteral.sys.sunrise
+            sunrise: mainWeatherLiteral.sys.sunrise,
+            timezone: mainWeatherLiteral.timezone
         });
 
         this.visibility = mainWeatherLiteral.visibility; // Visibilité en mètres

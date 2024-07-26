@@ -2,17 +2,21 @@ class Sun {
     //properties
     sunset;
     sunrise;
+    timezone;
 
     constructor(sunData) {
         this.sunset = sunData.sunset;
         this.sunrise = sunData.sunrise;
+        this.timezone = sunData.timezone;
     }
 
     //méthode pour convertir les timestamp en heure:minutes
     getTimeFromTimestamp(timestamp) {
-        const date = new Date(timestamp * 1000);
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
+        // on convertit le timestamp en millisecond
+        const date = new Date((timestamp + this.timezone)* 1000);
+
+        const hours = String(date.getUTCHours()).padStart(2, '0');
+        const minutes = String(date.getUTCMinutes()).padStart(2, '0');
         return `${hours}:${minutes}`;
     }
 
