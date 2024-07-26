@@ -130,6 +130,50 @@ class MainWeather {
         </li>
         `;
 
+        //ajouter l'onglet precipitation si on a des données de pluie ou de neige
+        if(this.rain||this.snow) {
+            tabList.innerHTML += `
+            <li class ="nav-item" role="presentation">
+            <a class="nav-link text-warning fw-bold active " id="tab5-tab" data-bs-toggle="tab" 
+            href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Precipitations</a>
+            </li>
+            `;
+
+            //creation des elements pour le contenue des onglets
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+            cardBody.innerHTML = `
+            <div class="tab-content" id="myTabContent">
+            ${tab1.outerHTML}
+            ${tab2.outerHTML}
+            ${tab3.outerHTML}
+            ${tab4.outerHTML}
+            ${tab5.outerHTML}
+            </div>
+            `;
+            
+            //crée l'element pour la carte
+            const card = document.createElement('div');
+            card.className = 'card h-100';
+            card.append(tabList, cardBody);
+
+            //crée l'element conteneur pour la carte
+            const cardContainer = document.createElement('div');
+            cardContainer.className = 'container mt-4';
+            cardContainer.innerHTML = `
+            <div class="row justify-content-center">
+            <div class="col-12 container-card">
+            </div>
+            </div>
+            </div>`;
+            cardContainer.querySelector('.conteiner-card').appendChild(card);
+
+            //mise a jour du container principal avec la nouvelle carte
+            resultDiv.innerHTML = '';
+            resultDiv.appendChild(cardContainer);
+            return cardContainer;
+        }
+
 }
 
 }
