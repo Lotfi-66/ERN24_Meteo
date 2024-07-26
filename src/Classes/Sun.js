@@ -17,21 +17,21 @@ class Sun {
     }
 
     getDom() {
-        const sun = document.createElement("div");
+        const sun = document.createElement('div');
         sun.innerHTML = `
-        <div class="d-flex align-items-center">
-                <i class="bi bi-speedometer2 mx-2"></i>
-                <span>Levé du soleil: ${this.getTimeFromTimestamp(this.sunset)}</span>
-            </div>
-            <div class="d-flex align-items-center">
-                <i class="bi bi-speedometer2 mx-2"></i>
-                <span>Couché du soleil: ${this.getTimeFromTimestamp(this.sunset)}</span>
-            </div>
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-sunrise mx-2"></i>
+            <span>Levé du soleil: ${this.getTimeFromTimestamp(this.sunrise)}</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-sunset mx-2"></i>
+            <span>Couché du soleil: ${this.getTimeFromTimestamp(this.sunset)}</span>
+          </div>
         </div>
-        `;
-
+      `;
         return sun;
     }
 }
 
-export default Sun
+export default Sun;
